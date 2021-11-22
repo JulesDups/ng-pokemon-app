@@ -1,0 +1,16 @@
+.carte {
+  .collection {
+    border:none !important;
+  }
+  .input-field, div {
+   width: 100%;
+  }
+
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .res {
+    margin:10px 10px 0 0;
+  }
+}

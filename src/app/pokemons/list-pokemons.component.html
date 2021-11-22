@@ -1,0 +1,21 @@
+<h1 class='center' style="color:#f5f5f5">Pokémons</h1>
+<div class='container'>
+  <app-search-pokemon></app-search-pokemon>
+  <div class="row">
+    <div *ngFor="let p of pokemons" class="col s6 m4">
+      <div class="carte card horizontal" [pkmonBorderCard]="'lime'" (click)="selectPokemon(p)">
+        <div class="card-image">
+          <img [src]="p.picture" alt="">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{ p.name }}</p>
+            <p><small>{{ p.created | date:'dd/MM/yyyy' }}</small></p>
+            <span *ngFor="let type of p.types" class="{{ type | pkmnTypeColor }} ">{{ type }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!pokemons"><h1 class="center header" style="color:#fff">IL N'Y A PAS DE POKÉMONS À AFFICHER</h1></div>
